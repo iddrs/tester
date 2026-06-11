@@ -55,6 +55,12 @@ if(!file_exists($argTestPath)) {
     exit();
 }
 
+// Cria o diretório de teste se ele não existir
+if(!file_exists($argResultDir)) {
+    Output::println("Criando o diretório $argResultDir");
+    mkdir($argResultDir, 0777, true);
+}
+
 // Testa se $argResultDir é um diretório
 if(!is_dir($argResultDir)) {
     Output::println("$argResultDir não é um diretório.");
