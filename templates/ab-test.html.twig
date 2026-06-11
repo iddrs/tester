@@ -1,0 +1,85 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}{{ testName }} :: {{ qualifier }}{% endblock %}
+
+{% block style %}
+<style>
+    .table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        min-width: 30%;
+    }
+
+    .table caption {
+        background-color: lightgray;
+        border: 1px solid black;
+    }
+
+    .table caption .title {
+        font-weight: bolder;
+    }
+
+    .table caption .qualifier {
+        font-style: italic;
+    }
+
+    .table tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .table td,
+    .table th {
+        padding: 5px;
+    }
+
+    .table tfoot {
+        background-color: lightgray;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <caption>
+        <p class="title">{{testName}}</p>
+        <p class="qualifier">{{ qualifier }}</p>
+    </caption>
+    <thead>
+        <tr>
+            <th style="text-align: left">Item</th>
+            <th style="text-align: right">Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+    {%  for key, value in litems %}
+        <tr>
+            <td style="text-align: left">{{ key }}</td>
+            <td style="text-align: right">{{ value|format_number({fraction_digit: 2}) }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <th style="text-align: left">Subtotal A</th>
+        <th style="text-align: right">{{ ltotal|format_number({fraction_digit: 2}) }}</th>
+    </tr>
+
+    {%  for key, value in ritems %}
+        <tr>
+            <td style="text-align: left">{{ key}}</td>
+            <td style="text-align: right">{{ value|format_number({fraction_digit: 2}) }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <th style="text-align: left">Subtotal B</th>
+        <th style="text-align: right">{{ rtotal|format_number({fraction_digit: 2}) }}</th>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th style="text-align: left">Diferença</th>
+        <th style="text-align: right">{{ diff|format_number({fraction_digit: 2}) }}</th>
+    </tr>
+    </tfoot>
+</table>
+{%  endblock %}

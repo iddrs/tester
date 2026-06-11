@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>{% block title %}{% endblock %}</title>
+                {% block style %}{% endblock %}
+        </head>
+        <body>
+                {% block content %}{% endblock %}
+
+                <p>Teste gerado em {{ "now"|date("d/m/Y H:i:s", "America/Sao_Paulo") }}</p>
+        </body>
+</html>

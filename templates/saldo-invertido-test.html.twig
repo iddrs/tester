@@ -1,0 +1,76 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}{{ testName }} :: {{ qualifier }}{% endblock %}
+
+{% block style %}
+<style>
+    .table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        min-width: 30%;
+    }
+
+    .table caption {
+        background-color: lightgray;
+        border: 1px solid black;
+    }
+
+    .table caption .title {
+        font-weight: bolder;
+    }
+
+    .table caption .qualifier {
+        font-style: italic;
+    }
+
+    .table tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .table td,
+    .table th {
+        padding: 5px;
+    }
+
+    .table tfoot {
+        background-color: lightgray;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <caption>
+        <p class="title">{{testName}}</p>
+        <p class="qualifier">{{ qualifier }}</p>
+    </caption>
+    <thead>
+        <tr>
+            <th style="text-align: left">Conta contábil</th>
+            <th style="text-align: left">Especificação</th>
+            <th style="text-align: left">Natureza esperada</th>
+            <th style="text-align: left">Natureza encontrada</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th style="text-align: right" colspan="3">Diferenças</th>
+        <th style="text-align: right">{{ errors }}</th>
+    </tr>
+    {%  for r in rows %}
+        <tr>
+            <td style="text-align: left">{{ r.conta_contabil }}</td>
+            <td style="text-align: left">{{ r.especificacao }}</td>
+            <td style="text-align: center">{{ r.natureza_esperada }}</td>
+            <td style="text-align: center">{{ r.natureza_encontrada }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="5">Sem saldos invertidos detectados.</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{%  endblock %}

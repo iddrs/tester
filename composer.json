@@ -1,0 +1,28 @@
+{
+  "name": "contabilidade/tester",
+  "description": "Testador de dados.",
+  "type": "tool",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Tester\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "everton3x",
+      "email": "everton3x@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=8.5",
+    "satur.io/duckdb": "dev-main",
+    "twig/twig": "4.x-dev",
+    "twig/intl-extra": "4.x-dev"
+  },
+  "scripts": {
+    "post-install-cmd": "\\Saturio\\DuckDB\\CLib\\Installer::install",
+    "post-update-cmd": "\\Saturio\\DuckDB\\CLib\\Installer::install"
+  }
+}

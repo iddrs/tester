@@ -1,0 +1,84 @@
+{%  extends 'base.html.twig' %}
+
+{% block title %}{{ testName }} :: {{ qualifier }}{% endblock %}
+
+{% block style %}
+<style>
+    .table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        min-width: 30%;
+    }
+
+    .table caption {
+        background-color: lightgray;
+        border: 1px solid black;
+    }
+
+    .table caption .title {
+        font-weight: bolder;
+    }
+
+    .table caption .qualifier {
+        font-style: italic;
+    }
+
+    .table tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .table td,
+    .table th {
+        padding: 5px;
+    }
+
+    .table tfoot {
+        background-color: lightgray;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <caption>
+        <p class="title">{{testName}}</p>
+        <p class="qualifier">{{ qualifier }}</p>
+    </caption>
+    <thead>
+        <tr>
+            <th style="text-align: left">Código</th>
+            <th style="text-align: left">Fonte de recurso</th>
+            <th style="text-align: right">Ativo financeiro</th>
+            <th style="text-align: right">(-) Saldo inicial RP</th>
+            <th style="text-align: right">(=) Superávit inicial</th>
+            <th style="text-align: right">(+) RP cancelados</th>
+            <th style="text-align: right">(-) Créditos abertos</th>
+            <th style="text-align: right">(=) Superávit disponível</th>
+            <th style="text-align: right">Saldo contábil</th>
+            <th style="text-align: right">Diferença</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th style="text-align: right" colspan="9">Diferenças</th>
+        <th style="text-align: right">{{ errors }}</th>
+    </tr>
+    {%  for r in rows %}
+        <tr>
+            <td style="text-align: left">{{ r.fonte_recurso }}</td>
+            <td style="text-align: left">{{ r.nome }}</td>
+            <td style="text-align: right">{{ r.ativo_financeiro|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.rp_a_pagar|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.superavit_inicial|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.rp_cancelados|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.creditos_abertos|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.superavit_disponivel|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.saldo_contabil|format_number({fraction_digit: 2}) }}</td>
+            <td style="text-align: right">{{ r.diferenca|format_number({fraction_digit: 2}) }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{%  endblock %}
