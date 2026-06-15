@@ -16,6 +16,7 @@ order by natureza_receita asc;
 SQL;
 
 $result = $this->db->query($sql);
+$rows = [];
 foreach ($result->rows(true) as $row) {
     $rows[] = $row;
 }
