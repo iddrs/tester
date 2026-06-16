@@ -70,7 +70,7 @@ class Processor
         $output_dir = realpath($this->resultDir);
         $this->clearOldResults($output_dir);
         foreach ($this->testFiles as $tfile) {
-            $basename = basename($tfile, '-test.php');
+            $basename = basename($tfile, '.php');
             Output::println($basename);
             $result = require $tfile;
             foreach ($result as $r) {

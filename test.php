@@ -72,13 +72,7 @@ $testFiles = [];
 if(is_file($argTestPath)) {
     $testFiles[] = $argTestPath;
 }else{
-    $sourceDirPattern = "$argTestPath/*-test.php";
-//    $dirIterator = new RegexIterator(
-//        new RecursiveIteratorIterator(
-//            new RecursiveDirectoryIterator($sourceDirPattern, RecursiveDirectoryIterator::SKIP_DOTS)), '/^.+\.txt$/i', RecursiveRegexIterator::GET_MATCH);
-//    foreach ($dirIterator as $item) {
-//        $testFiles[] = realpath($item[0]);
-//    }
+    $sourceDirPattern = "$argTestPath/*.php";
     $testFiles = glob($sourceDirPattern);
 }
 //print_r($testFiles);
