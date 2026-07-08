@@ -69,7 +69,7 @@ foreach ($entidades as $entidade => $qualifier) {
         and entidade like '$entidade'
         and deducao > 0
         and balrec.fonte_recurso = fr.fonte_recurso
-        and deducao = 105 -- apenas as deduções para o Fundeb é que são consideradas na DDR utilizada
+        -- and deducao = 105 -- apenas as deduções para o Fundeb é que são consideradas na DDR utilizada
     ), 0) as deducao_receita,
     ifnull((
                select sum(saldo_atual)
