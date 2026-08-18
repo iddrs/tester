@@ -3,17 +3,17 @@
 use Tester\ResultTest;
 
 $entidades = [
-    'pm' => 'PM',
     'cm' => 'CM',
+    'pm' => 'PM',
     'fpsm' => 'FPSM',
 ];
 
 $test_name = 'Saldos invertidos';
 
 $result = [];
-$success = true;
 
 foreach ($entidades as $entidade => $qualifier) {
+    $success = true;
     $sql = <<<SQL
         with t0 as (
             select
@@ -33,7 +33,7 @@ foreach ($entidades as $entidade => $qualifier) {
                 ifnull(natureza_esperada,
                        case
                            when substring(conta_contabil, 1, 1) in ('1', '3', '5', '7') then 'D'
-                           when substring(conta_contabil, 1, 1) in ('2', '4', '6', '8') then 'c'
+                           when substring(conta_contabil, 1, 1) in ('2', '4', '6', '8') then 'C'
                        end
                 ) as natureza_esperada
             from t0
@@ -83,7 +83,6 @@ foreach ($entidades as $entidade => $qualifier) {
     if ($errors > 0) {
         $success = false;
     }
-
     $html = $this->render('saldo-invertido-test', [
         'testName' => $test_name,
         'qualifier' => $qualifier,
