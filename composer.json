@@ -16,7 +16,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=8.5",
+    "php": ">=8.4",
     "satur.io/duckdb": "dev-main",
     "twig/twig": "4.x-dev",
     "twig/intl-extra": "4.x-dev"
