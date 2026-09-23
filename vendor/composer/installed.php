@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'contabilidade/tester',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'dfdc14ac4faa9f2094c9e1eeea1fe78d1dd90b53',
         'type' => 'tool',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'contabilidade/tester' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'dfdc14ac4faa9f2094c9e1eeea1fe78d1dd90b53',
             'type' => 'tool',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'satur.io/duckdb' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd09caa5a0ea630683b707d739fc5d055bd9427e9',
+            'reference' => '9e30b059d5b86fc1e8025d448e20bdeeea21a0e3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../satur.io/duckdb',
             'aliases' => array(
@@ -33,18 +33,18 @@
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f3202fa1b5097b0af062dc978b32ecf63404e31d',
+            'reference' => 'feb1edf4e546af3b85c5caebe8359a20db230ca3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(
-                0 => '3.7.x-dev',
+                0 => '3.8.x-dev',
             ),
             'dev_requirement' => false,
         ),
         'symfony/intl' => array(
             'pretty_version' => '8.2.x-dev',
             'version' => '8.2.9999999.9999999-dev',
-            'reference' => '7822dffb3e2128501a1ac781db5d8217fc9caac1',
+            'reference' => '9a8ba3a0af4db32bf228ca841c319d5dc97f7d02',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/intl',
             'aliases' => array(),
@@ -62,7 +62,7 @@
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => '1.x-dev',
             'version' => '1.9999999.9999999.9999999-dev',
-            'reference' => 'd3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6',
+            'reference' => '7bcabc4ea978edff5036a38db0dc845740165767',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
@@ -71,7 +71,7 @@
         'twig/intl-extra' => array(
             'pretty_version' => '4.x-dev',
             'version' => '4.9999999.9999999.9999999-dev',
-            'reference' => '36f0541b897aeca7a62c123ed1ff36f76bb888ba',
+            'reference' => 'adee6404653b4d2849ea8a19f5d1612636c749a1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/intl-extra',
             'aliases' => array(),
@@ -80,7 +80,7 @@
         'twig/twig' => array(
             'pretty_version' => '4.x-dev',
             'version' => '4.9999999.9999999.9999999-dev',
-            'reference' => 'c2c949d5bc3e82a79ed3f470540d00b97b31b2c5',
+            'reference' => 'cc16fa89919d17436f77d9b1e671a864817bd2f4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
             'aliases' => array(),

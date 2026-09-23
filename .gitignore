@@ -6,3 +6,8 @@ composer.phar
 composer.lock
 
 /results/
+
+# Configuração gerada pela interface gráfica (tester_gui.py)
+tester_gui_config.json
+__pycache__/
+*.pyc
